@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.game-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    background: linear-gradient(45deg, #ffffff, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.game-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.game-board {
+    position: relative;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(20, 30px);
+    gap: 1px;
+    background-color: #0f1419;
+    border: 3px solid #4ecdc4;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.grid div {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(145deg, #1a1f2e, #0f1419);
+    border: 1px solid #2a3441;
+    border-radius: 3px;
+    transition: all 0.1s ease;
+}
+
+.side-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    min-width: 200px;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.score-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #4ecdc4;
+}
+
+.score-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff6b6b;
+    text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+}
+
+.next-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #4ecdc4;
+    text-align: center;
+}
+
+.mini-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 25px);
+    grid-template-rows: repeat(4, 25px);
+    gap: 1px;
+    background-color: #0f1419;
+    border: 2px solid #4ecdc4;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.mini-grid div {
+    width: 25px;
+    height: 25px;
+    background: linear-gradient(145deg, #1a1f2e, #0f1419);
+    border: 1px solid #2a3441;
+    border-radius: 2px;
+}
+
+.controls {
+    text-align: center;
+}
+
+.controls h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #4ecdc4;
+}
+
+.control-info {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #b8c5d1;
+}
+
+#start-button {
+    width: 100%;
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: linear-gradient(45deg, #ff0000, #564ecd);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+}
+
+#start-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.4);
+}
+
+#start-button:active {
+    transform: translateY(0);
+}
+
+/* Tetromino Colors with Gradients */
+.tetromino.l {
+    background: linear-gradient(145deg, #3498db, #2980b9);
+    border-color: #2980b9;
+    box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.3);
+}
+
+.tetromino.z {
+    background: linear-gradient(145deg, #e67e22, #d35400);
+    border-color: #d35400;
+    box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.3);
+}
+
+.tetromino.t {
+    background: linear-gradient(145deg, #9b59b6, #8e44ad);
+    border-color: #8e44ad;
+    box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.3);
+}
+
+.tetromino.o {
+    background: linear-gradient(145deg, #f1c40f, #f39c12);
+    border-color: #f39c12;
+    box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.3);
+}
+
+.tetromino.i {
+    background: linear-gradient(145deg, #2ecc71, #27ae60);
+    border-color: #27ae60;
+    box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.3);
+}
+
+.taken.l {
+    background: linear-gradient(145deg, #2980b9, #21618c);
+}
+
+.taken.z {
+    background: linear-gradient(145deg, #d35400, #a04000);
+}
+
+.taken.t {
+    background: linear-gradient(145deg, #8e44ad, #6c3483);
+}
+
+.taken.o {
+    background: linear-gradient(145deg, #f39c12, #d68910);
+}
+
+.taken.i {
+    background: linear-gradient(145deg, #27ae60, #1e8449);
+}
+
+.game-over {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: #ff6b6b;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    z-index: 1000;
+    border: 2px solid #ff6b6b;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .game-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(10, 25px);
+        grid-template-rows: repeat(20, 25px);
+    }
+    
+    .grid div {
+        width: 25px;
+        height: 25px;
+    }
+}
