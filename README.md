@@ -6,9 +6,9 @@
   | | | |___  | | |  _ < | | ___) |
   |_| |_____| |_| |_| \_\___|____/
 ```
-
+## ABOUT
 - A Nostalgic Game Remade
 - Made Using html,css and javascript
 - Feel Free To Customize and make Your Own Changes
-
+## OUTPUT
 ![Alt text](Tetris.png)
